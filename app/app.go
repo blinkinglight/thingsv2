@@ -13,7 +13,7 @@ var (
 
 func Run(n *nats.Conn) {
 	nc = n
-	output, err := Call[first.Output]("first", first.Input{
+	output, err := Call[first.Output](first.Name, first.Input{
 		Value: "hello",
 	})
 	log.Printf("err(%v) data: %+v", err, output)
